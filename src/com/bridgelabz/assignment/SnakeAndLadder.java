@@ -71,8 +71,10 @@ public class SnakeAndLadder {
 		
 		while(position<100) {
 	  		int dicevValue=diceRolled();
+	  		diceRolled++;
 	  		checkOption(dicevValue);
 	  		}
+		System.out.println("Number of times the dice is rolled:"+ diceRolled);
 	  		
 		
 		
