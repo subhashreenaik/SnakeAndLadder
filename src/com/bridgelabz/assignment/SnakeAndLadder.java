@@ -40,25 +40,17 @@ public class SnakeAndLadder {
 			System.out.println("The player is in same position");
 		}
 		else if(options==2) {
-			
 			position=position+diceValue;
-			
-			if(position >100) {
-				position = position-diceValue;
-			}
+			System.out.println("Ladder the player moves ahead by the\r\n"
+					+ "number of position received in the die");
 		}
 		
 		else {
 			position=position-diceValue;
-			
-			if(position <0) {
-				position=0;
-			}
+			System.out.println("In Case of Snake the player moves behind by the\r\n\" "
+					+ "number of position recieved in the die");	
 		}
-		
 		System.out.println("Position is  "+position+ "");
-		
-		
 		
 	}
 
