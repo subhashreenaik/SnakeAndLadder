@@ -11,6 +11,8 @@ public class SnakeAndLadder {
 	static int position=0;
 	static int diceRolled=0;
 	
+	
+	//Method to create random dice value
 	static int diceRolled() {
 		int diceValue = (int)(Math.random() *6)+1;
 		switch(diceValue) {
@@ -35,32 +37,36 @@ public class SnakeAndLadder {
 		//option 1 is no play
 		//option 2 is ladder
 		//option 3 is snake
-		
 		if(options==1) {
-			System.out.println("The player is in same position");
+		
 		}
 		else if(options==2) {
+			
 			position=position+diceValue;
-			System.out.println("Ladder the player moves ahead by the\r\n"
-					+ "number of position received in the die");
 		}
 		
 		else {
 			position=position-diceValue;
-			System.out.println("In Case of Snake the player moves behind by the\r\n\" "
-					+ "number of position recieved in the die");	
+			
+			if(position <0) {
+				position=0;
+			}
 		}
-		System.out.println("Position is  "+position+ "");
+		
+		System.out.println("Position is  "+position+ "");	
 		
 	}
+
 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	    int dice=diceRolled();
-		System.out.println("Dice rolled and the value is  "+ dice );
-	
-		checkOption(dice);
+		
+		while(position<100) {
+	  		int dicevValue=diceRolled();
+	  		checkOption(dicevValue);
+	  		}
+	  		
 		
 		
 	}
