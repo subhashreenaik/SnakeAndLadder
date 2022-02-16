@@ -38,11 +38,15 @@ public class SnakeAndLadder {
 		//option 2 is ladder
 		//option 3 is snake
 		if(options==1) {
-		
+	
 		}
 		else if(options==2) {
 			
 			position=position+diceValue;
+			
+			if(position >100) {
+				position = position-diceValue;
+			}
 		}
 		
 		else {
@@ -53,9 +57,12 @@ public class SnakeAndLadder {
 			}
 		}
 		
-		System.out.println("Position is  "+position+ "");	
+		System.out.println("Position is  "+position+ "");
+		
+		
 		
 	}
+
 
 
 	
