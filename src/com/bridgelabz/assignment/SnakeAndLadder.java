@@ -8,37 +8,69 @@ package com.bridgelabz.assignment;
 public class SnakeAndLadder {
 	
 	//Declaring variables
-	static int start_Position=0;
+	static int position=0;
 	static int diceRolled=0;
+	
+	static int diceRolled() {
+		int diceValue = (int)(Math.random() *6)+1;
+		switch(diceValue) {
+		case 1:
+			return 1;	
+		case 2:
+			return 2;
+		case 3:
+			return 3;
+		case 4:
+			return 4;
+		case 5:
+			return 5;
+		default:
+			return 6;
+		}	
+	}
+	
+	static void checkOption(int diceValue) {
+		int options = (int)(Math.random() *3)+1;
+		
+		//option 1 is no play
+		//option 2 is ladder
+		//option 3 is snake
+		
+		if(options==1) {
+			System.out.println("The player is in same position");
+		}
+		else if(options==2) {
+			
+			position=position+diceValue;
+			
+			if(position >100) {
+				position = position-diceValue;
+			}
+		}
+		
+		else {
+			position=position-diceValue;
+			
+			if(position <0) {
+				position=0;
+			}
+		}
+		
+		System.out.println("Position is  "+position+ "");
+		
+		
+		
+	}
 
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int diceValue = (int)(Math.random() *6)+1;
-		switch(diceValue) {
-		case 1:
-			System.out.println("Dice rolled and the value is 1");
-			break;
-		case 2:
-			System.out.println("Dice rolled and the value is 2");
-			break;
-		case 3:
-			System.out.println("Dice rolled and the value is 3");
-			break;
-		case 4:
-			System.out.println("Dice rolled and the value is 4");
-			break;
-		case 5:
-			System.out.println("Dice rolled and the value is 5");
-			break;
-		default:
-			System.out.println("Dice rolled and the value is 6");
-			break;
-			
+	    int dice=diceRolled();
+		System.out.println("Dice rolled and the value is  "+ dice );
+	
+		checkOption(dice);
 		
-		}
 		
-
 	}
 
 }
